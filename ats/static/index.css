@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body {
+    background: linear-gradient(90deg, #bbffe8, #b9d9d6, #baaed4, #bbb1e6);
+    background-size: 200% 200%;
+    filter: blur(10px);
+    animation: gradient 10s ease infinite;
+}
+
+.line
+{
+	background: linear-gradient(90deg, #202fff, #ffd12d, #ff009d);
+    background-size: 200% 200%;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Styling for the form container */
+.drop-zone {
+  border: 2px dashed #007BFF;
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+/* Styling for the file input field */
+input[type="file"] {
+  display: block;
+  margin: 10px auto;
+}
+
+/* Styling for labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Styling for text input fields */
+input[type="text"] {
+  display: block;
+  width: calc(100% - 22px); /* Adjust width to fit within form container */
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+/* Styling for submit button */
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Hover effect for submit button */
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the text inside the paragraph */
+p {
+  margin: 10px 0;
+  color: #333;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .score-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 150px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 0 auto;
+        }
+
+        #score {
+            font-size: 4em;
+            color: #ff6347;
+        }
+
+        .details-box {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .details-box p {
+            margin: 10px 0;
+            color: #333;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Score</h1>
+        <div class="score-box">
+            <span id="score">{{ total }}/10</span>
+        </div>
+        <div class="details-box">
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Job Description:</strong> {{ job_desc }}</p>
+        </div>
+    </div>
+</body>
+</html>

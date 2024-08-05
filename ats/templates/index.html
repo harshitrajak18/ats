@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../static/index.css" />
+  </head>
+  <body>
+    <div>
+      <div class="flex items-center px-5 justify-between">
+        <div>
+          <img class="h-10" src="../static/logo-removebg-preview.png" alt="Logo" />
+        </div>
+        <div class="md:hidden">
+          <button id="menu-btn" class="block hamburger focus:outline-none">
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+          <a href="#" class="text-gray-700 hover:text-gray-900">Home</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">About</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Services</a>
+          <a href="#" class="text-gray-700 hover:text-gray-900">Contact</a>
+        </nav>
+      </div>
+      <div id="menu" class="hidden md:hidden">
+        <a href="#" class="block py-2 px-4 text-sm">Home</a>
+        <a href="#" class="block py-2 px-4 text-sm">About</a>
+        <a href="#" class="block py-2 px-4 text-sm">Services</a>
+        <a href="#" class="block py-2 px-4 text-sm">Contact</a>
+      </div>
+    </div>
+    <!-- hero -->
+    <div class="bg-[#314aae]">
+      <div class="flex justify-center items-center p-36">
+        <!-- Left -->
+        <div>
+          <div class="flex text-white flex-col gap-4">
+            <span class="text-4xl">Is your resume good enough?</span>
+            <span class="text-lg w-[50%]">
+              A free and fast AI resume checker doing 16 crucial checks to ensure your resume is ready to perform and get you interview callbacks.
+            </span>
+          </div>
+        </div>
+        <div>
+          <img src="../static/banner_resume_check.jpg" alt="Banner" />
+        </div>
+      </div>
+    </div>
+    <!-- ats -->
+    <div>
+      <div class="flex w-full p-20">
+        <div class="w-[60%]">
+          <div>
+            <span class="text-4xl font-semibold">Why Check Your Resume Score?</span>
+            <div class="line h-1 w-[34rem]"></div>
+            <div class="w-[90%] mt-4">
+              <span>
+                PaintMinds' AI powered Resume Score Checker will thoroughly evaluate your resume's First Impression, Design & Structure, Experience, Skillsets mentioned along with critical ATS-friendly keywords that all recruiters are looking for in an ideal resume. Freely generated GAP Report will provide you personalized tips & strategies to make your resume stand out.
+                <br/><br/>
+                What is an ATS? Why is it important? ATS is an Applicant Tracking System used by organizations across industries to shortlist the right candidate from a pool of resumes. If you are applying to a large organization, your resume will be shortlisted based on ATS scores. Get started with PaintMinds Resume Score Checker to see where you stand.
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img class="h-[30rem]" src="../static/Orange White Green Neo Brutalism Business Performance Dashboard Graph.png" alt="Graph" />
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <span class="text-4xl">Check Your Score</span>
+      </div>
+      <div>
+        <input type="text" id="jd" name="jd" />
+        <form action="{%url 'list'%}" method="post" enctype="multipart/form-data" class="drop-zone">
+          {% csrf_token %}
+          <p>Drop file here or click to upload</p>
+          {{form.file}}
+          <label for="name" style="display: block;">Name:</label>
+          <input type="text" id="name" name="name" style="display: block; margin-bottom: 10px;" /><br />
+          <label for="jd" style="display: block;">Job Description:</label>
+          <input type="text" id="jd" name="jd" style="display: block;" /><br />
+          <p style="color: red;">click here to submit <input type="submit" value="Upload" /></p>
+        </form>
+      </div>
+      <!-- Result -->
+      <div class="flex mt-44 justify-center">
+        <span class="text-4xl">Result</span>
+      </div>
+      <div class="flex flex-col items-center justify-center mt-20">
+        <div class="flex flex-col justify-center items-center gap-10">
+          <!-- Name of the user -->
+          <div class="w-32 h-32 rounded-full bg-black">
+            <!-- add score here out of 100 -->
+          </div>
+          <!-- Result Circle -->
+          <span>Name <!-- Name yha aayega --></span>
+        </div>
+        <div class="flex justify-center mt-10">
+          <span class="w-[80%] text-center">
+            <!-- Custom Message -->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis rerum aliquid ratione asperiores, est earum? Alias sit, nobis recusandae, voluptatibus, architecto quae nulla soluta accusantium dolores eligendi eveniet natus accusamus!
+          </span>
+        </div>
+      </div>
+    </div>
+    <script>
+      const btn = document.getElementById('menu-btn');
+      const nav = document.getElementById('menu');
+
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('open');
+        nav.classList.toggle('hidden');
+      });
+    </script>
+    <style>
+      .hamburger {
+        cursor: pointer;
+        z-index: 30;
+      }
+      .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background: #333;
+        transition: 0.4s;
+      }
+      .open .hamburger-top {
+        transform: rotate(45deg);
+        position: relative;
+        top: 8px;
+      }
+      .open .hamburger-middle {
+        opacity: 0;
+      }
+      .open .hamburger-bottom {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8px;
+      }
+    </style>
+    <script src="../static/index.js"></script>
+  </body>
+</html>
